@@ -11,5 +11,7 @@ services:
         sync: false
       - key: STRIPE_SECRET_KEY
         sync: false
+      - key: PYTHON_VERSION
+        value: "3.11.0"
       - key: FRONTEND_URL
         value: "https://your-vercel-project-url.vercel.app"
