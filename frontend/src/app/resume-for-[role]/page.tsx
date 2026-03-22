@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { TrendingUp, FileText, CheckCircle } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({ params }: { params: Promise<{ role: string }> }) {
   const resolvedParams = await params;
-  const roleName = resolvedParams.role.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+  const roleRaw = resolvedParams?.role || "job-seeker";
+  const roleName = roleRaw.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
   return {
     title: `Best ATS Resume Builder for ${roleName} - ResuMatch AI`,
     description: `Build a ${roleName} resume that passes ATS software and lands you interviews instantly.`,
@@ -16,7 +19,7 @@ export default async function ProgrammaticSEOLanding({
   params: Promise<{ role: string }>;
 }) {
   const resolvedParams = await params;
-  const roleRaw = resolvedParams.role;
+  const roleRaw = resolvedParams?.role || "job-seeker";
   const roleName = roleRaw.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
 
   return (
