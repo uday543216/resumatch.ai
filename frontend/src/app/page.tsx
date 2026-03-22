@@ -78,7 +78,7 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto font-light">
               Upload your resume, and our AI will brutally analyze it against your target job descriptions to ensure you pass keyword filters and secure the interview.
             </p>
-          </
+          </>
         )}
         
         {/* Upload Widget Area or Results */}
